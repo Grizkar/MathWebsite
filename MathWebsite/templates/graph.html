@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/graph.css" rel="stylesheet">
+    <link href="../static/css/nav.css" rel="stylesheet">
+    <title>TheMather9000</title>
+</head>
+<body>
+    <nav>
+        <div class="Home">
+            <a class="HomeLink" href="/">Home</a>
+        </div>
+        <div class="Calculator">
+            <a class="CalculatorLink" href="/calculator">Calculator</a>
+        </div>
+        <div class="Graph">
+            <a class="GraphLink" href="/graph">Graph Function</a>
+        </div>
+        <div class="Solve">
+            <a class="SolveLink" href="/solve">Solve Function</a>
+        </div>
+        <div class="Logo">
+            <img src="../static/images/placeholder.png" alt="Logo">
+        </div>
+    </nav>
+    {% if graph_html %}
+        <h2>Graph of {{ func_str }}</h2>
+        {{ graph_html|safe }}
+    {% endif %}
+    
+    <h3>Enter a function to graph:</h3>
+    <form method="POST">
+        <label for="function">Function:</label>
+        <input type="text" id="function" name="function" placeholder="e.g., x^2 - 4" required><br>
+        <button type="submit">Graph</button>
+    </form>
+</body>
+</html>

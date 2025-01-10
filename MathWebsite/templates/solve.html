@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/solve.css" rel="stylesheet">
+    <link href="../static/css/nav.css" rel="stylesheet">
+    <title>TheMather9000</title>
+</head>
+<body>
+    <nav>
+        <div class="Home">
+            <a class="HomeLink" href="/">Home</a>
+        </div>
+        <div class="Calculator">
+            <a class="CalculatorLink" href="/calculator">Calculator</a>
+        </div>
+        <div class="Graph">
+            <a class="GraphLink" href="/graph">Graph Function</a>
+        </div>
+        <div class="Solve">
+            <a class="SolveLink" href="/solve">Solve Function</a>
+        </div>
+        <div class="Logo">
+            <img src="../static/images/placeholder.png" alt="Logo">
+        </div>
+    </nav>
+    <form class="Form" method="POST">
+        <label for="function_type">Select Function Type:</label>
+        <select id="function_type" name="function_type" required>
+            <option value="polynomial">Polynomial</option>
+            <option value="rational">Rational</option>
+            <option value="trigonometric">Trigonometric</option>
+            <option value="exponential">Exponential</option>
+            <option value="logarithmic">Logarithmic</option>
+            <option value="piecewise">Piecewise</option>
+            <option value="absolute_value">Absolute Value</option>
+            <option value="square_root">Square Root</option>
+            <option value="polynomial_with_exponent">Polynomial with Exponent</option>
+        </select>
+        <label for="function">Function:</label>
+        <input type="text" id="function" name="function" required>
+        <label for="operation">Select Operation:</label>
+        <select id="operation" name="operation" required>
+            <option value="derivative">Derivative</option>
+            <option value="roots">Roots</option>
+            <option value="">Evaluate</option>
+        </select>
+        <label for="evaluation">Select Number for Evaluation(Optional):</label>
+        <input type="text" id="evaluation" name="evaluation">
+        <button type="submit">Solve</button>
+    </form>
+    {% if result is not none %}
+        <h2>Result:</h2>
+        <p>{{ result }}</p>
+    {% endif %}
+</body>
+</html>
