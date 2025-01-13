@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../static/css/index.css" rel="stylesheet">
+    <link href="../static/css/calculate.css" rel="stylesheet">
     <link href="../static/css/nav.css" rel="stylesheet">
     <title>TheMather9000</title>
 </head>
@@ -25,7 +25,17 @@
             <img src="../static/images/placeholder.png" alt="Logo">
         </div>
     </nav>
-    <div class="container">
+    <div class="calculator">
+        <h1>Calculator</h1>
+        <form action="/calculate" method="post">
+            <input type="text" name="expression" placeholder="Enter expression" required>
+            <button type="submit">Calculate</button>
+        </form>
+        {% if result is not none %}
+            <div class="result">
+                <h2>Result: {{ result }}</h2>
+            </div>
+        {% endif %}
     </div>
 </body>
 </html>

@@ -1,12 +1,21 @@
 from flask import Flask, render_template, request
 from graph import plot_function
 from solve import solve_polynomial, solve_rational, solve_trigonometric, solve_exponential, solve_logarithmic, solve_piecewise, solve_absolute_value, solve_square_root
+from calculate import calculate
 import sympy as sp
 app = Flask(__name__)
 
 @app.route('/')
 def index():
     return render_template('index.html')
+
+@app.route('/calculate', methods=['GET', 'POST'])
+def calculate_route():
+    result = None
+    if request.method == 'POST':
+        expression = request.form['expression']
+        result = calculate(expression)
+    return render_template('calculate.html', result=result)
 
 @app.route('/graph', methods=['GET', 'POST'])
 def graph():
