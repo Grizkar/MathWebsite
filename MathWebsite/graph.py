@@ -27,7 +27,7 @@ def parse_function(func_str, func_type):
         return func
     except Exception as e:
         return f"Error: {str(e)}"
-
+    
 def plot_function(func_str, func_type, x_range=(-10, 10)):
     x = sp.symbols('x')
     func = parse_function(func_str, func_type)
@@ -47,6 +47,19 @@ def plot_function(func_str, func_type, x_range=(-10, 10)):
         title="Graph of the Function",
         xaxis_title="x",
         yaxis_title="f(x)",
-        showlegend=True
+        showlegend=True,
+        plot_bgcolor='black',
+        paper_bgcolor='#2a2a2a',
+        font=dict(color='white'),
+        xaxis=dict(
+            showgrid=True,
+            gridcolor='#444',
+        ),
+        yaxis=dict(
+            showgrid=True,
+            gridcolor='#444',
+        ),
+        title_font=dict(size=20),
+        margin=dict(l=50, r=50, t=50, b=50)
     )
     return fig.to_html(full_html=False)
