@@ -22,8 +22,6 @@ def parse_function(func_str, func_type):
             func = sp.Abs(x)
         elif func_type == 'square_root':
             func = sp.sqrt(x)
-        elif func_type == 'polynomial_with_exponent':
-            func = sp.sympify(func_str)
         else:
             raise ValueError("Invalid function type")
         return func
@@ -48,7 +46,7 @@ def plot_function(func_str, func_type, x_range=(-10, 10)):
     fig.update_layout(
         title="Graph of the Function",
         xaxis_title="x",
-        yaxis_title="y",
+        yaxis_title="f(x)",
         showlegend=True
     )
     return fig.to_html(full_html=False)

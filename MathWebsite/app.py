@@ -22,8 +22,15 @@ def graph():
     if request.method == 'POST':
         func_type = request.form.get('function_type')
         func_str = request.form.get('function')
+        min_x = request.form.get('min_x', -10)
+        max_x = request.form.get('max_x', 10)
+        try:
+            min_x = float(min_x)
+            max_x = float(max_x)
+        except ValueError:
+            return render_template('graph.html', error="Invalid range values.")
         if func_type and func_str:
-            graph_html = plot_function(func_str, func_type)
+            graph_html = plot_function(func_str, func_type, x_range=(min_x, max_x))
             return render_template('graph.html', graph_html=graph_html, func_str=func_str)
         else:
             return render_template('graph.html', error="Both function type and function are required.")

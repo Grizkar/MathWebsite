@@ -39,6 +39,10 @@
         </select>
         <label for="function">Function:</label>
         <input type="text" id="function" name="function" required>
+        <label for="min_x">Min X:</label>
+        <input type="number" id="min_x" name="min_x" value="-10" required>
+        <label for="max_x">Max X:</label>
+        <input type="number" id="max_x" name="max_x" value="10" required>
         <button type="submit">Graph</button>
     </form>
     {% if graph_html %}
