@@ -25,16 +25,25 @@
             <img src="../static/images/placeholder.png" alt="Logo">
         </div>
     </nav>
+    <form method="POST">
+        <label for="function_type">Select Function Type:</label>
+        <select id="function_type" name="function_type" required>
+            <option value="polynomial">Polynomial</option>
+            <option value="rational">Rational</option>
+            <option value="trigonometric">Trigonometric</option>
+            <option value="exponential">Exponential</option>
+            <option value="logarithmic">Logarithmic</option>
+            <option value="piecewise">Piecewise</option>
+            <option value="absolute_value">Absolute Value</option>
+            <option value="square_root">Square Root</option>
+        </select>
+        <label for="function">Function:</label>
+        <input type="text" id="function" name="function" placeholder="e.g., x^2 - 4" required>
+        <button type="submit">Graph</button>
+    </form>
     {% if graph_html %}
         <h2>Graph of {{ func_str }}</h2>
         {{ graph_html|safe }}
     {% endif %}
-    
-    <h3>Enter a function to graph:</h3>
-    <form method="POST">
-        <label for="function">Function:</label>
-        <input type="text" id="function" name="function" placeholder="e.g., x^2 - 4" required><br>
-        <button type="submit">Graph</button>
-    </form>
 </body>
 </html>

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from graph import plot_function
-from solve import solve_polynomial, solve_rational, solve_trigonometric, solve_exponential, solve_logarithmic, solve_piecewise, solve_absolute_value, solve_square_root, solve_polynomial_with_exponent
+from solve import solve_polynomial, solve_rational, solve_trigonometric, solve_exponential, solve_logarithmic, solve_piecewise, solve_absolute_value, solve_square_root
 import sympy as sp
 app = Flask(__name__)
 
@@ -11,10 +11,14 @@ def index():
 @app.route('/graph', methods=['GET', 'POST'])
 def graph():
     if request.method == 'POST':
+        func_type = request.form.get('function_type')
         func_str = request.form.get('function')
-        graph_html = plot_function(func_str)
-        return render_template('graph.html', graph_html=graph_html, func_str=func_str)
-    return render_template('graph.html', graph_html=None)
+        if func_type and func_str:
+            graph_html = plot_function(func_str, func_type)
+            return render_template('graph.html', graph_html=graph_html, func_str=func_str)
+        else:
+            return render_template('graph.html', error="Both function type and function are required.")
+    return render_template('graph.html', graph_html=None, error=None)
 
 @app.route('/solve', methods=['GET', 'POST'])
 def solve():
@@ -37,7 +41,6 @@ def solve():
             'piecewise':solve_piecewise,
             'absolute_value':solve_absolute_value,
             'square_root':solve_square_root,
-            'polynomial_with_exponent':solve_polynomial_with_exponent
         }
         solver = solvers.get(function_type)
         if not solver:

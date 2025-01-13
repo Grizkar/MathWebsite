@@ -211,28 +211,3 @@ def solve_square_root(func_str, operation=None, evaluation=None):
                 return f"Error evaluating function: {e}"
     except Exception as e:
         return f"Error parsing function: {e}"
-
-def solve_polynomial_with_exponent(func_str, operation=None, evaluation=None):
-    x = sp.Symbol('x')
-    try:
-        func = sp.sympify(func_str)
-        if operation and operation.lower() == 'roots':
-            try:
-                roots = sp.solve(func, x)
-                return roots if roots else "No roots found"
-            except Exception as e:
-                return f"Error finding roots: {e}"
-        elif operation and operation.lower() == 'derivative':
-            try:
-                derivative = sp.diff(func, x)
-                return derivative
-            except Exception as e:
-                return f"Error calculating derivative: {e}"
-        elif type(evaluation) == int or type(evaluation) == float:
-            try:
-                value = func.evalf(subs={x: evaluation})
-                return round(value, 2)
-            except Exception as e:
-                return f"Error evaluating function: {e}"
-    except Exception as e:
-        return f"Error parsing function: {e}"
