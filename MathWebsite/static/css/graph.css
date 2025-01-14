@@ -6,20 +6,33 @@ html, body {
     font-family: Arial, sans-serif;
     color: white;
     box-sizing: border-box;
+    overflow-x: hidden;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
 }
 
 body {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: flex-start;
+}
+
+.container {
+    height: auto;
+    width: 100%;
 }
 
 form {
     width: 30%;
     margin-top: 7.5vh;
+    margin-left: auto;
+    margin-right: auto;
     padding: 2rem;
-    background-color: #222;
+    background-color: #1e1e1e;
     border-radius: 1rem;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -89,4 +102,14 @@ input[type="number"]::-webkit-inner-spin-button {
 input[type="number"] {
     -moz-appearance: textfield;
     appearance: textfield;
+}
+
+.graph-section {
+    width: 90%;
+    max-height: 100vh;
+    margin: 2rem auto 0 auto;
+    padding: 1rem;
+    background-color: #1e1e1e;
+    border-radius: 1rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
