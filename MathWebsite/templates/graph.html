@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character encoding and viewport configuration -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Links to external CSS files for styling the graph page and navigation -->
     <link href="../static/css/graph.css" rel="stylesheet">
     <link href="../static/css/nav.css" rel="stylesheet">
+
+    <!-- Title of the webpage -->
     <title>TheMather9000</title>
 </head>
 <body>
+    <!-- Navigation bar with links to different pages -->
     <nav>
+        <!-- Home link -->
         <div class="Home">
             <a class="HomeLink" href="/">Home</a>
         </div>
+
+        <!-- Calculator link -->
         <div class="Calculator">
             <a class="CalculatorLink" href="/calculate">Calculator</a>
         </div>
+
+        <!-- Graph link -->
         <div class="Graph">
             <a class="GraphLink" href="/graph">Graph Function</a>
         </div>
+
+        <!-- Solve link -->
         <div class="Solve">
             <a class="SolveLink" href="/solve">Solve Function</a>
         </div>
+
+        <!-- Logo section with an image -->
         <div class="Logo">
-            <img src="../static/images/placeholder.png" alt="Logo">
+            <img src="../static/images/logo.png" alt="Logo">
         </div>
     </nav>
+
+    <!-- Main container for the graphing form -->
     <div class="container">
+        <!-- Form for selecting the function type and entering parameters for graphing -->
         <form method="POST">
+            <!-- Dropdown for selecting the function type -->
             <label for="function_type">Select Function Type:</label>
             <select id="function_type" name="function_type" required>
                 <option value="polynomial">Polynomial</option>
@@ -38,17 +57,28 @@
                 <option value="absolute_value">Absolute Value</option>
                 <option value="square_root">Square Root</option>
             </select>
+
+            <!-- Input for the function expression -->
             <label for="function">Function:</label>
             <input type="text" id="function" name="function" required>
+
+            <!-- Input for the minimum value of x -->
             <label for="min_x">Min X:</label>
             <input type="number" id="min_x" name="min_x" value="-10" required>
+
+            <!-- Input for the maximum value of x -->
             <label for="max_x">Max X:</label>
             <input type="number" id="max_x" name="max_x" value="10" required>
+
+            <!-- Submit button for generating the graph -->
             <button type="submit">Graph</button>
         </form>
+
+        <!-- Conditional display of the graph if available -->
         {% if graph_html %}
             <div class="graph-section">
                 <h2>Graph of {{ func_str }}</h2>
+                <!-- Display the graph HTML -->
                 {{ graph_html|safe }}
             </div>
         {% endif %}

@@ -1,4 +1,6 @@
+/* General Styles for HTML and Body */
 html, body {
+    /* Full height, no margins or padding, dark theme background, and consistent font */
     height: 100%;
     margin: 0;
     padding: 0;
@@ -6,40 +8,55 @@ html, body {
     font-family: Arial, sans-serif;
     color: white;
     box-sizing: border-box;
+
+    /* Hides horizontal overflow and scrollbar visibility */
     overflow-x: hidden;
-    overflow: -moz-scrollbars-none;
-    scrollbar-width: none;
+    overflow: -moz-scrollbars-none; /* Firefox-specific scrollbar removal */
+    scrollbar-width: none; /* Remove scrollbar in Firefox */
 }
 
+/* Hides scrollbars for webkit browsers */
 html::-webkit-scrollbar, body::-webkit-scrollbar {
     display: none;
 }
 
+/* Body layout for stacking elements starting from the left */
 body {
+    /* Flex layout for vertical stacking with alignment to the left */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
+/* Main container styling */
 .container {
+    /* Flexible height, full width, and central positioning */
     height: auto;
     width: 100%;
     padding: 2rem;
+
+    /* Adds top margin and centers container with a fixed max width */
     margin-top: 10vh !important;
-    max-width: 1200px; /* Limit max width for readability */
+    max-width: 1200px; /* Limit the width for better readability */
     margin: auto;
+
+    /* Dark theme background with rounded corners and shadow effect */
     background-color: #1e1e1e;
     border-radius: 1rem;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* Paragraph text styles */
 p {
+    /* Standard font size, comfortable line spacing, and spacing below */
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 1rem;
 }
 
+/* Anchor (link) styles */
 a {
+    /* Highlighted red color for links with no underline by default */
     color: #ff4d4d;
     text-decoration: none;
 }

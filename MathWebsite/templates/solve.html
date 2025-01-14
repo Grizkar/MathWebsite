@@ -1,31 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character encoding and viewport configuration -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Links to external CSS files for styling the solving page and navigation -->
     <link href="../static/css/solve.css" rel="stylesheet">
     <link href="../static/css/nav.css" rel="stylesheet">
+
+    <!-- Title of the webpage -->
     <title>TheMather9000</title>
 </head>
 <body>
+    <!-- Navigation bar with links to different pages -->
     <nav>
+        <!-- Home link -->
         <div class="Home">
             <a class="HomeLink" href="/">Home</a>
         </div>
+
+        <!-- Calculator link -->
         <div class="Calculator">
             <a class="CalculatorLink" href="/calculate">Calculator</a>
         </div>
+
+        <!-- Graph link -->
         <div class="Graph">
             <a class="GraphLink" href="/graph">Graph Function</a>
         </div>
+
+        <!-- Solve link -->
         <div class="Solve">
             <a class="SolveLink" href="/solve">Solve Function</a>
         </div>
+
+        <!-- Logo section with an image -->
         <div class="Logo">
-            <img src="../static/images/placeholder.png" alt="Logo">
+            <img src="../static/images/logo.png" alt="Logo">
         </div>
     </nav>
+
+    <!-- Form to input function and operation for solving -->
     <form class="Form" method="POST">
+        <!-- Label and dropdown for selecting the function type -->
         <label class="label_function_type" for="function_type">Select Function Type:</label>
         <select id="function_type" name="function_type" required>
             <option value="polynomial">Polynomial</option>
@@ -37,18 +55,28 @@
             <option value="absolute_value">Absolute Value</option>
             <option value="square_root">Square Root</option>
         </select>
+
+        <!-- Label and input field for the function -->
         <label class="label_function" for="function">Function:</label>
         <input type="text" id="function" name="function" required>
+
+        <!-- Label and dropdown for selecting the operation -->
         <label class="label_operation" for="operation">Select Operation:</label>
         <select id="operation" name="operation" required>
             <option value="derivative">Derivative</option>
             <option value="roots">Roots</option>
             <option value="">Evaluate</option>
         </select>
+
+        <!-- Label and input field for optional evaluation number -->
         <label class="label_evaluation" for="evaluation">Select Number for Evaluation (Optional):</label>
         <input type="text" id="evaluation" name="evaluation">
+
+        <!-- Submit button to perform the operation -->
         <button class="submit" type="submit">Solve</button>
     </form>
+
+    <!-- Display the result if available -->
     {% if result is not none %}
         <div class="result">{{ result }}</div>
     {% endif %}

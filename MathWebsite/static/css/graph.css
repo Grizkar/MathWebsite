@@ -1,4 +1,6 @@
+/* General Styles for HTML and Body */
 html, body {
+    /* Full height, no margins or padding, dark theme background, and consistent font */
     height: 100%;
     margin: 0;
     padding: 0;
@@ -6,27 +8,35 @@ html, body {
     font-family: Arial, sans-serif;
     color: white;
     box-sizing: border-box;
+
+    /* Hides horizontal overflow and scrollbar visibility */
     overflow-x: hidden;
-    overflow: -moz-scrollbars-none;
-    scrollbar-width: none;
+    overflow: -moz-scrollbars-none; /* Firefox-specific scrollbar removal */
+    scrollbar-width: none; /* Remove scrollbar in Firefox */
 }
 
+/* Hides scrollbars for webkit browsers */
 html::-webkit-scrollbar, body::-webkit-scrollbar {
     display: none;
 }
 
+/* Body layout for stacking elements starting from the left */
 body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
+/* Main container for responsive layout */
 .container {
+    /* Flexible height and full width */
     height: auto;
     width: 100%;
 }
 
+/* Form container styles */
 form {
+    /* Centered form with dark background, rounded corners, and shadow effect */
     width: 30%;
     margin-top: 7.5vh;
     margin-left: auto;
@@ -35,79 +45,105 @@ form {
     background-color: #1e1e1e;
     border-radius: 1rem;
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+
+    /* Flex layout for stacking form elements with spacing */
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    /* Text appearance */
     font-size: 1rem;
     color: #fff;
     box-sizing: border-box;
 }
 
+/* Label styles for form elements */
 label {
+    /* Bold text with slight margin for spacing */
     font-size: 1rem;
     font-weight: bold;
     color: #e4e4e4;
     margin-bottom: 0.75rem;
 }
 
+/* Input and select field styles */
 select, input[type="text"], input[type="number"] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
+    /* Neutral dark background, border, and consistent padding */
     appearance: none;
     background-color: #333;
     border: 2px solid #666;
     border-radius: 0.5rem;
     padding: 0 1rem;
+
+    /* Text appearance and responsive width */
     font-size: 1rem;
     color: #fff;
     width: 100%;
     box-sizing: border-box;
+
+    /* Smooth focus transitions */
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
     height: 2.5rem;
 }
 
+/* Focus state for input and select fields */
 select:focus, input[type="text"]:focus, input[type="number"]:focus {
+    /* Highlighted border and subtle shadow effect */
     outline: none;
     border-color: #ff4d4d;
     box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
 }
 
+/* Button styles */
 button {
+    /* Padding, bold text, and primary red background */
     padding: 1rem 2rem;
     background-color: #ff4d4d;
     color: white;
     font-size: 1rem;
     font-weight: bold;
+
+    /* Rounded corners and interactive hover effect */
     border: none;
     border-radius: 0.5rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+/* Hover state for buttons */
 button:hover {
+    /* Darker red background and slight scale-up effect */
     background-color: #cc0000;
     transform: scale(1.05);
 }
 
+/* Additional margin for buttons within the form */
 form > button {
     margin-top: 2rem;
 }
 
+/* Style adjustments for number input fields */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
+    /* Remove default spinner for webkit browsers */
     -webkit-appearance: none;
     margin: 0;
 }
 
+/* Remove spinner for Firefox */
 input[type="number"] {
     -moz-appearance: textfield;
     appearance: textfield;
 }
 
+/* Graph section container styles */
 .graph-section {
+    /* Wide layout with responsive height and centralized positioning */
     width: 90%;
     max-height: 100vh;
     margin: 2rem auto 0 auto;
+
+    /* Dark background, padding, rounded corners, and shadow effect */
     padding: 1rem;
     background-color: #1e1e1e;
     border-radius: 1rem;

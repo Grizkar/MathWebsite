@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character encoding and viewport configuration -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Links to external CSS files for styling -->
     <link href="../static/css/calculate.css" rel="stylesheet">
     <link href="../static/css/nav.css" rel="stylesheet">
+
+    <!-- Title of the webpage -->
     <title>TheMather9000</title>
 </head>
 <body>
+    <!-- Navigation bar with links to different pages -->
     <nav>
+        <!-- Home link -->
         <div class="Home">
             <a class="HomeLink" href="/">Home</a>
         </div>
+
+        <!-- Calculator link -->
         <div class="Calculator">
             <a class="CalculatorLink" href="/calculate">Calculator</a>
         </div>
+
+        <!-- Graph link -->
         <div class="Graph">
             <a class="GraphLink" href="/graph">Graph Function</a>
         </div>
+
+        <!-- Solve link -->
         <div class="Solve">
             <a class="SolveLink" href="/solve">Solve Function</a>
         </div>
+
+        <!-- Logo section with an image -->
         <div class="Logo">
-            <img src="../static/images/placeholder.png" alt="Logo">
+            <img src="../static/images/logo.png" alt="Logo">
         </div>
     </nav>
+
+    <!-- Main calculator section -->
     <div class="calculator">
+        <!-- Heading for the calculator page -->
         <h1>Calculator</h1>
+
+        <!-- Form for entering the mathematical expression -->
         <form action="/calculate" method="post">
             <input type="text" name="expression" placeholder="Enter expression" required>
             <button type="submit">Calculate</button>
         </form>
+
+        <!-- Conditional display of result if it exists -->
         {% if result is not none %}
             <div class="result">
                 <h2>Result: {{ result }}</h2>

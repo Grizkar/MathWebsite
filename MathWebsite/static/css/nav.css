@@ -1,59 +1,85 @@
+/* Navigation Bar Styles */
 nav {
+    /* Full width, fixed height, dark background */
     width: 100%;
     height: 7.5%;
     background-color: #333;
+
+    /* Flexbox layout for aligning items horizontally */
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    /* Fixed position at the top with a high z-index for visibility */
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
+
+    /* Subtle shadow effect for depth */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
+/* Link Styles */
 nav a {
+    /* Remove underline, white text, and larger font size */
     text-decoration: none;
     color: white;
     font-size: 1.25rem;
+
+    /* Smooth color transition on hover */
     transition: color 0.3s ease;
 }
 
+/* Navigation Buttons (Home, Calculator, Graph, Solve) */
 .Home, .Calculator, .Graph, .Solve {
+    /* Flexbox layout for centered alignment */
     display: flex;
-    width: 10%;
+    width: 10%; /* Fixed width for consistency */
     height: 100%;
     align-items: center;
     justify-content: center;
+
+    /* Pointer cursor and hover transition */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
+/* Logo Container Styles */
 .Logo {
+    /* Flex layout for right alignment of logo */
     display: flex;
     margin-left: auto;
     align-items: center;
     justify-content: flex-end;
+
+    /* Fixed width and height for consistency */
     width: 10%;
     height: 100%;
 }
 
+/* Logo Image Styles */
 .Logo img {
+    /* Block display for images, fixed size with rounded corners */
     display: block;
     width: 2.5rem;
     height: 2.5rem;
-    border-radius: 50%;
-    margin-right: 0.625rem;
+    border-radius: 50%; /* Circular image */
+    margin-right: 0.625rem; /* Spacing to the right of the image */
 }
 
+/* Hover Effects for Navigation Buttons */
 .Home:hover, .Calculator:hover, .Graph:hover, .Solve:hover {
+    /* Change background color to a red tone on hover */
     background-color: #cc3e3e;
 }
 
+/* Hover State Styling for Navigation Links */
 body:has(.Home:hover) .HomeLink,
 body:has(.Calculator:hover) .CalculatorLink,
 body:has(.Graph:hover) .GraphLink,
 body:has(.Solve:hover) .SolveLink {
+    /* Change link text color to black with a smooth transition */
     color: black;
     transition: color 0.3s ease;
 }

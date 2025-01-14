@@ -1,66 +1,85 @@
+/* General Styles for HTML and Body */
 html, body {
+    /* Full width and height with no margin or padding */
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: #121212;
+    background-color: #121212; /* Dark background theme */
     font-family: Arial, sans-serif;
-    box-sizing: border-box;
+    box-sizing: border-box; /* Ensures padding/border are included in element dimensions */
 }
 
+/* Body layout with flexbox for centering content */
 body {
+    /* Flexbox setup to center content vertically and horizontally */
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
+/* Form container with padding, border-radius, and shadow */
 .Form {
+    /* Fixed width, with a top margin for spacing */
     width: 30%;
     margin-top: 5vh;
+    
+    /* Dark background, padding, rounded corners, and shadow effect */
     background-color: #1e1e1e;
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+
+    /* Flexbox layout to stack elements vertically */
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.5rem; /* Space between form elements */
 }
 
+/* Label styling for readability */
 label {
+    /* Bold, larger font size, with spacing below */
     font-size: 1rem;
     font-weight: bold;
-    color: #e4e4e4;
+    color: #e4e4e4; /* Light text color for contrast */
     margin-bottom: 0.5rem;
 }
 
+/* Styling for select and input fields */
 #function_type, #operation {
+    /* Set height, appearance styles, and consistent border/radius */
     height: 2.5rem;
-    appearance: none;
+    appearance: none; /* Remove default styling for select dropdown */
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-color: #333;
-    border: 2px solid #666;
+    background-color: #333; /* Dark background */
+    border: 2px solid #666; /* Light border */
     border-radius: 0.5rem;
     padding: 0 1rem;
     font-size: 1rem;
-    color: #e4e4e4;
-    width: 100%;
-    cursor: pointer;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    color: #e4e4e4; /* Light text */
+    width: 100%; /* Full width */
+    cursor: pointer; /* Pointer cursor to indicate interaction */
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Smooth transition on focus */
 }
 
+/* Focus styling for select and input fields */
 #function_type:focus, #operation:focus {
+    /* Remove outline and change border and box-shadow on focus */
     outline: none;
-    border-color: #ff4d4d;
-    box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
+    border-color: #ff4d4d; /* Red border for focus */
+    box-shadow: 0 0 5px rgba(255, 77, 77, 0.5); /* Glow effect */
 }
 
+/* Hide the dropdown arrow in select inputs for a cleaner appearance */
 #function_type::-ms-expand, #operation::-ms-expand {
     display: none;
 }
 
+/* Input fields for function and evaluation */
 #function, #evaluation {
+    /* Same style as select, with full-width, background color, and border */
     height: 2.5rem;
     background-color: #333;
     border: 2px solid #666;
@@ -73,56 +92,76 @@ label {
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Focus styling for input fields */
 #function:focus, #evaluation:focus {
+    /* Similar to select fields, adding focus effect */
     outline: none;
     border-color: #ff4d4d;
     box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
 }
 
+/* Result display area with box styling */
 .result {
+    /* Same width as form, with additional padding and margin */
     width: 30%;
     padding: 2rem;
     margin-top: 2vh;
+
+    /* Dark background, light border, and rounded corners */
     background-color: #222;
     border: 2px solid #666;
     border-radius: 0.5rem;
     font-size: 1.125rem;
-    color: #e4e4e4;
+    color: #e4e4e4; /* Light text for visibility */
+    
+    /* Flexbox layout for centering result content */
     display: flex;
     justify-content: center;
     align-items: center;
+    
+    /* Minimum height and box sizing */
     min-height: 3rem;
     box-sizing: border-box;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
+/* Submit button with styling for interaction */
 .submit {
+    /* Full width, padding, background color, and border-radius */
     padding: 1rem 2rem;
-    background-color: #ff4d4d;
+    background-color: #ff4d4d; /* Red background */
     border: none;
     border-radius: 0.5rem;
     font-size: 1rem;
     font-weight: bold;
-    color: white;
+    color: white; /* White text */
     width: 100%;
-    cursor: pointer;
+    cursor: pointer; /* Pointer cursor to indicate clickability */
     transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+
+    /* Flexbox layout for centering content inside button */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Submit button hover effect */
 .submit:hover {
+    /* Darker red background and scaling effect on hover */
     background-color: #cc0000;
     transform: scale(1.05);
 }
 
+/* Submit button focus effect */
 .submit:focus {
+    /* Remove outline and add glow effect */
     outline: none;
     box-shadow: 0 0 5px rgba(255, 77, 77, 0.5);
 }
 
+/* Submit button active state (when clicked) */
 .submit:active {
+    /* Slight color and scaling change when the button is pressed */
     background-color: #cc0000;
     transform: scale(1);
 }
