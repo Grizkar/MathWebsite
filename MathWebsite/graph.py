@@ -17,7 +17,7 @@ def parse_function(func_str, func_type):
         elif func_type == 'logarithmic':
             func = sp.log(x)
         elif func_type == 'piecewise':
-            func = sp.Piecewise((x, x > 0), (-x, x <= 0))
+            func = sp.Piecewise(x)
         elif func_type == 'absolute_value':
             func = sp.Abs(x)
         elif func_type == 'square_root':

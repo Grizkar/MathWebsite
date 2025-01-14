@@ -1,12 +1,45 @@
-html {
-    width: 100%;
+html, body {
     height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    font-family: Arial, sans-serif;
+    color: white;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow: -moz-scrollbars-none;
+    scrollbar-width: none;
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+    display: none;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.container {
+    height: auto;
     width: 100%;
-    background-color: grey;
+    padding: 2rem;
+    margin-top: 10vh !important;
+    max-width: 1200px; /* Limit max width for readability */
+    margin: auto;
+    background-color: #1e1e1e;
+    border-radius: 1rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: #ff4d4d;
+    text-decoration: none;
 }
